@@ -21,6 +21,3 @@ foreach ($sequencia->sequencia($contador) as $fibo => $valores) {
     }
 }
 echo $soma;
-
-
-
