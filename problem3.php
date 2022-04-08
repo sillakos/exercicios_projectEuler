@@ -1,19 +1,14 @@
 <?php
 
+use Vios\Exercicio\modelo\MaiorNumeroPrimo;
+
+require_once 'src/modelo/MaiorNumeroPrimo.php';
+/*
+Os fatores primos de 13195 são 5, 7, 13 e 29.
+
+Qual é o maior fator primo do número 600851475143?
+*/
 $numero = 600851475143;
-$fatorPrimo = 0;
-$atual = 0;
+$maiorPrimo = new MaiorNumeroPrimo();
 
-for ($i = 1; $i <= $numero; $i++) {
-    $divisao = $numero / $i;
-
-    if (fmod($atual, $i)) {
-        continue;
-    } else {
-        $fatorPrimo = $i;
-    }
-    $atual = $divisao;
-    $numero = $atual;
-}
-
-echo "O maior fator primo do número escolhido é {$fatorPrimo}" . PHP_EOL;
+echo "O maior fator primo do número {$numero} é {$maiorPrimo->maiorPrimoDe($numero)}";
